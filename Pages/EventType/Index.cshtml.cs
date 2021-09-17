@@ -19,10 +19,12 @@ namespace SduCyberForm.Pages.EventType
         }
 
         public IEnumerable<CyberForm> CyberForms { get; set; }
+        public IEnumerable<EventTypeModel> EventTypeModels { get; set; }
 
         public async Task OnGet()
         {
             CyberForms = await _db.CyberForm.ToListAsync();
+            EventTypeModels = await _db.EventTypeModel.ToListAsync();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿@page
 @model SduCyberForm.Pages.EventType.CreateModel
 
+
 <br />
 <h2 class="text-info">Yeni Form Ekle</h2>
 <br />
@@ -54,59 +55,72 @@
         <h5>Olay Türü</h5>
         <div class="form-row">
             <div class="form-group col-md-4">
-                @Html.CheckBoxFor(x=>Model.CyberForm.EventType, new { @checked = "checked" })
+                @Html.CheckBoxFor(x=>Model.EventTypeModel.Ddos , new { @checked = "checked" })
                 <label>Ddos</label>
             </div>
             <div class="form-group col-md-4">
                 @Html.CheckBoxFor(x => Model.CyberForm.SysOutage, new { @checked = "checked" })
-             
+                <label>Bilgi Sızdırma</label> 
             </div>
             <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Malware<BR>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Dolandırıcılık<BR>
-            </div>
-            <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Port Tarama<BR>
-            </div>
-            <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Veritabanı Saldırısı<BR>
+                @Html.CheckBoxFor(x => Model.EventTypeModel.Malware, new { @checked = "checked" })
+                <label>Virus(Malware)</label>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Web Uygulamarı Güvenlik İhlalleri<BR>
+                @Html.CheckBoxFor(x => Model.EventTypeModel.Dolandiricilik, new { @checked = "checked" })
+                <label>Dolandırıcılık</label>
             </div>
             <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Sosyal Mühendislik<BR>
+                @Html.CheckBoxFor(x => Model.EventTypeModel.PortTarama, new { @checked = "checked" })
+                <label>Port Tarama</label>
             </div>
             <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Veri Kaybı/İfşası<BR>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Spam<BR>
-            </div>
-            <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox"> Parola Ele Geçirme<BR>
-            </div>
-            <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Taşınır Cihaz Kaybı<BR>
+                @Html.CheckBoxFor(x => Model.EventTypeModel.VeriSaldiri, new { @checked = "checked" })
+                <label>Veritabanı Saldırısı</label>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Kimlik Taklidi<BR>
+                @Html.CheckBoxFor(x => Model.EventTypeModel.WebGuvenlik, new { @checked = "checked" })
+                <label>Web Uygulamaları Güvenlik İhlalleri</label>
             </div>
             <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Oltalama(Phishing)<BR>
+                @Html.CheckBoxFor(x => Model.EventTypeModel.SosyalMuh, new { @checked = "checked" })
+                <label>Sosyal Mühendislik</label>
             </div>
             <div class="form-group col-md-4">
-                <INPUT TYPE="checkbox">Kişisel Bilgilerin Kötüye Kullanımı<BR>
+                @Html.CheckBoxFor(x => Model.EventTypeModel.VeriKaybi, new { @checked = "checked" })
+                <label>Veri Kaybı/Veri İfşası</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                @Html.CheckBoxFor(x => Model.EventTypeModel.Spam, new { @checked = "checked" })
+                <label>Zararlı Elektronik Posta(Spam)</label>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.CheckBoxFor(x => Model.EventTypeModel.ParolaEleGec, new { @checked = "checked" })
+                <label>Parola Ele Geçirme</label>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.CheckBoxFor(x => Model.EventTypeModel.CihazKaybi, new { @checked = "checked" })
+                <label>Taşınır Cihaz Kaybı</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                @Html.CheckBoxFor(x => Model.EventTypeModel.KimlikTaklidi, new { @checked = "checked" })
+                <label>Kimlik Taklidi</label>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.CheckBoxFor(x => Model.EventTypeModel.Oltalama, new { @checked = "checked" })
+                <label>Oltalama(Phishing)</label>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.CheckBoxFor(x => Model.EventTypeModel.KisiselKotuKullanim, new { @checked = "checked" })
+                <label>Kişisel Bilgilerin Kötüye Kullanımı</label>
             </div>
         </div>
         <br />
@@ -123,6 +137,7 @@
             </div>
         </div>
         <br />
+        
         @*-------------------------------------------------------------------------------------------------------------------------------------*@
         <h5>Olayın:</h5>
         <div class="form-row">

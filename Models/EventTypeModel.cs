@@ -13,19 +13,20 @@ namespace SduCyberForm.Models
         public int Id { get; set; }
 
         public bool Ddos { get; set; }
+        public bool Malware { get; set; }
         public bool BilgiSizdirma { get; set; }
-        public bool Dolandırıcılık { get; set; }
+        public bool Dolandiricilik { get; set; }
         public bool PortTarama { get; set; }
-        public bool VeriSaldırı { get; set; }
+        public bool VeriSaldiri { get; set; }
         public bool WebGuvenlik { get; set; }
         public bool SosyalMuh { get; set; }
-        public bool VeriKaybı { get; set; }
+        public bool VeriKaybi { get; set; }
         public bool Spam { get; set; }
         public bool ParolaEleGec { get; set; }
-        public bool CihazKaybı { get; set; }
+        public bool CihazKaybi { get; set; }
         public bool KimlikTaklidi { get; set; }
         public bool Oltalama { get; set; }
-        public bool KisiselKotuKullanım { get; set; }
+        public bool KisiselKotuKullanim { get; set; }
        
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SduCyberForm.Models;
 
 namespace SduCyberForm.Migrations
 {
     [DbContext(typeof(SCFDbContext))]
-    partial class SCFDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210917125935_updateTableEventTypeModel")]
+    partial class updateTableEventTypeModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

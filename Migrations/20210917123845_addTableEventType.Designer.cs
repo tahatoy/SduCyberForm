@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SduCyberForm.Models;
 
 namespace SduCyberForm.Migrations
 {
     [DbContext(typeof(SCFDbContext))]
-    partial class SCFDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210917123845_addTableEventType")]
+    partial class addTableEventType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,22 +76,19 @@ namespace SduCyberForm.Migrations
                     b.Property<bool>("BilgiSizdirma")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("CihazKaybi")
+                    b.Property<bool>("CihazKaybı")
                         .HasColumnType("bit");
 
                     b.Property<bool>("Ddos")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("Dolandiricilik")
+                    b.Property<bool>("Dolandırıcılık")
                         .HasColumnType("bit");
 
                     b.Property<bool>("KimlikTaklidi")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("KisiselKotuKullanim")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Malware")
+                    b.Property<bool>("KisiselKotuKullanım")
                         .HasColumnType("bit");
 
                     b.Property<bool>("Oltalama")
@@ -107,10 +106,10 @@ namespace SduCyberForm.Migrations
                     b.Property<bool>("Spam")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("VeriKaybi")
+                    b.Property<bool>("VeriKaybı")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("VeriSaldiri")
+                    b.Property<bool>("VeriSaldırı")
                         .HasColumnType("bit");
 
                     b.Property<bool>("WebGuvenlik")

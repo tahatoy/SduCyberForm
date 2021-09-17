@@ -17,9 +17,9 @@ namespace SduCyberForm.Pages.EventType
         }
         [BindProperty]
         public CyberForm CyberForm { get; set; }
-       
 
-
+        [BindProperty]
+        public EventTypeModel EventTypeModel { get; set; }
 
 
         public void OnGet()
@@ -31,7 +31,7 @@ namespace SduCyberForm.Pages.EventType
         {
             if(ModelState.IsValid)
             {
-               
+                await _db.EventTypeModel.AddAsync(EventTypeModel);                           
                 await _db.CyberForm.AddAsync(CyberForm);
                 await _db.SaveChangesAsync();
 
