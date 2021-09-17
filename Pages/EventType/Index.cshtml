@@ -1,0 +1,109 @@
+﻿@page
+@model SduCyberForm.Pages.EventType.IndexModel
+
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-9">
+        <h2 class="text-info">Form Sonuçları</h2>
+    </div>
+
+    <div class="col-3">
+        <a asp-page="Create" class="btn btn-success form-control text-white">Yeni Form Oluştur</a>
+    </div>
+
+    <div class="col-12 border-bottom">
+        <form method="post">
+            @if (Model.CyberForms.Count() > 0)
+            {
+                <table class="table table-striped col-12">
+                    <tr class="table-secondary">
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().UnitName"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().FirstName"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().LastName"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().Degree"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().TelNo"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().Email"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().EventType"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().SysOutage"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().StartDate"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().DetectionDate"></label>
+                        </th>
+                        <th>
+                            <label asp-for="CyberForms.FirstOrDefault().Etc"></label>
+                        </th>
+
+                        <th>İŞLEMLER</th>
+                    </tr>
+
+                    @foreach(var item in Model.CyberForms)
+                     {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(a => item.UnitName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.Degree)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.TelNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.EventType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.SysOutage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.DetectionDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a => item.Etc)
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">Sil</button>
+                    </td>
+                </tr>
+                     }
+
+                </table>
+
+            }
+            else
+            {
+                <p>Listelenecek form sonucu bulunamadı...</p>
+            }
+        </form>
+    </div>
+
+</div>

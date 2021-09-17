@@ -1,0 +1,166 @@
+﻿@page
+@model SduCyberForm.Pages.EventType.CreateModel
+
+<br />
+<h2 class="text-info">Yeni Form Ekle</h2>
+<br />
+
+<div class="border container" style="padding:30px">
+    <h5>Bildirimi Yapan Birim</h5>
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <div>
+                <label asp-for="CyberForm.UnitName">Birim Adı</label>
+            </div>
+            <div>
+                <input asp-for="CyberForm.UnitName" class="form-control" placeholder="Birim Adınız" />
+            </div>
+            <span asp-validation-for="CyberForm.UnitName" class="text-danger"></span>
+        </div>
+        <br />
+        @*-------------------------------------------------------------------------------------------------------------------------------------*@
+        <h5>Bildirimi Yapan Personel</h5>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="CyberForm.FirstName">Ad</label>
+                <input type="text" class="form-control" asp-for="CyberForm.FirstName" placeholder="Adınız" />
+            </div>
+            <span asp-validation-for="CyberForm.FirstName" class="text-danger"></span>
+            <div class="form-group col-md-6">
+                <label asp-for="CyberForm.LastName">Soyad</label>
+                <input type="text" class="form-control" asp-for="CyberForm.LastName" placeholder="Soyadınız" />
+            </div>
+            <span asp-validation-for="CyberForm.LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CyberForm.Degree">Ünvan</label>
+            <input type="text" class="form-control" asp-for="CyberForm.Degree" placeholder="Ünvanınız" />
+        </div>
+        <span asp-validation-for="CyberForm.Degree" class="text-danger"></span>
+        <div class="form-group">
+            <label asp-for="CyberForm.TelNo">Telefon Numarası</label>
+            <input type="text" class="form-control" asp-for="CyberForm.TelNo" placeholder="Telefon Numaranız" />
+        </div>
+        <span asp-validation-for="CyberForm.TelNo" class="text-danger"></span>
+        <div class="form-group">
+            <label asp-for="CyberForm.Email">E-Posta</label>
+            <input type="text" class="form-control" asp-for="CyberForm.Email" placeholder="E-Posta Adresiniz" />
+        </div>
+        <span asp-validation-for="CyberForm.Email" class="text-danger"></span>
+
+        <br />
+        @*-------------------------------------------------------------------------------------------------------------------------------------*@
+        <h5>Olay Türü</h5>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                @Html.CheckBoxFor(x=>Model.CyberForm.EventType, new { @checked = "checked" })
+                <label>Ddos</label>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.CheckBoxFor(x => Model.CyberForm.SysOutage, new { @checked = "checked" })
+             
+            </div>
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Malware<BR>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Dolandırıcılık<BR>
+            </div>
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Port Tarama<BR>
+            </div>
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Veritabanı Saldırısı<BR>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Web Uygulamarı Güvenlik İhlalleri<BR>
+            </div>
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Sosyal Mühendislik<BR>
+            </div>
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Veri Kaybı/İfşası<BR>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Spam<BR>
+            </div>
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox"> Parola Ele Geçirme<BR>
+            </div>
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Taşınır Cihaz Kaybı<BR>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Kimlik Taklidi<BR>
+            </div>
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Oltalama(Phishing)<BR>
+            </div>
+            <div class="form-group col-md-4">
+                <INPUT TYPE="checkbox">Kişisel Bilgilerin Kötüye Kullanımı<BR>
+            </div>
+        </div>
+        <br />
+        @*-------------------------------------------------------------------------------------------------------------------------------------*@
+        <h5>Olay Sistem Kesintisine Neden Oldu Mu?</h5>
+        <div class="form-row">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline1">Evet</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline2">Hayır</label>
+            </div>
+        </div>
+        <br />
+        @*-------------------------------------------------------------------------------------------------------------------------------------*@
+        <h5>Olayın:</h5>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <h6>Tahmini Başlangıç Zamanı</h6>
+                <input type="date" class="form-control" asp-for="CyberForm.StartDate" />
+            </div>
+            <div class="form-group col-md-6">
+                <h6>Tespit Edildiği Zaman</h6>
+                <input type="date" class="form-control" asp-for="CyberForm.DetectionDate" />
+            </div>
+        </div>
+        <br />
+        @*-------------------------------------------------------------------------------------------------------------------------------------*@
+        <h5>Eklemek İstedikleriniz</h5>
+        <div class="form-group">
+            <textarea class="form-control rounded-0" rows="10"></textarea>
+        </div>
+        <br />
+        @*-------------------------------------------------------------------------------------------------------------------------------------*@
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Gönder" class="btn btn-success form-control " />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-primary form-control"> Geri Dön</a>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+<br />
+
+
+
+
+
+
+
